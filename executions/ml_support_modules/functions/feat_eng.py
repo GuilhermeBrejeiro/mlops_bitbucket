@@ -16,7 +16,7 @@ def read_data(path):
     return df
 
 def process_data(
-    X,label=None, training=True, scaler=None):
+    X,label=None, training=True, encoder=None):
 
     """
     Process the data before use it on a Machine Learning model.
