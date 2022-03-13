@@ -1,5 +1,7 @@
 import pandas as pd
+import numpy as np
 from sklearn.preprocessing import StandardScaler
+
 
 def read_data(path):
     """
@@ -12,8 +14,9 @@ def read_data(path):
     ------
     A comma-separated values (csv) file is returned as two-dimensional data structure with labeled axes
     """
-    df = df.read_csv(path)
+    df = pd.read_csv(path)
     return df
+
 
 def process_data(
     X,label=None, training=True, encoder=None):
@@ -46,11 +49,11 @@ def process_data(
 
     """
 
-    #Drop Id column if already exists
-    X.drop(["Id"], axis=1, inplace = True, errors="ignore")
+    # Drop Id column if already exists
+    X.drop(["Id"], axis= 1, inplace= True, errors= "ignore")
 
     if label is not None:
-        
+
         X["binary_y"] = X[label] > 5
         X.drop([label], inplace=True, axis=1)
         y = X["binary_y"]
@@ -58,7 +61,6 @@ def process_data(
         X = X.drop(["binary_y"], axis=1)
     else:
         y = np.array([])
-    
 
     if training is True:
         encoder = StandardScaler()
@@ -67,3 +69,4 @@ def process_data(
         X = encoder.transform(X)
 
     return X, y, encoder
+    

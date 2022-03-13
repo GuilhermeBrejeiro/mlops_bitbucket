@@ -1,8 +1,9 @@
 
-#Algorithm with the best score from DS notebook
+# Algorithm with the best score from DS notebook
 from sklearn.ensemble import AdaBoostClassifier
-#Metrics
+# Metrics
 from sklearn.metrics import accuracy_score, f1_score
+
 
 def train_model(X_train, y_train):
     """
@@ -14,8 +15,7 @@ def train_model(X_train, y_train):
         Training data
 
     y_train: array-like of shape (n_samples)
-        The target values (class labels)
-    
+        The target values (class labels)    
     Return
     ------
     model
@@ -67,4 +67,3 @@ def predictions(model, X):
 
     predictions = model.predict(X)
     return predictions
-
