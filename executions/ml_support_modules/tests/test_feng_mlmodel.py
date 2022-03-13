@@ -52,7 +52,7 @@ def test_process_data(data_read):
 
     X, y, encoder = process_data(data_read, label="quality", training=True)
 
-    assert len(features == X.columns) == len(features)
+    assert len(X[0]) == len(features)
     assert len(X) == len(y)
 
 def test_train_pred_metrics(data_read):
