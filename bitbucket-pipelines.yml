@@ -4,21 +4,14 @@ image: python:3.8
 
 pipelines:
   default:
-    - parallel:
-      - step:
-          name: Install dependences
-          caches:
-            - pip
-          script:
-            - pip install --upgrade pip
-            - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-            - pip install pytest
-            #- pytest -v 
-      - step:
-          name: Lint with flake8 and pytest
-          script:
-            # Enforce style consistency across Python projects
-            - pip install flake8 pytest
-            - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-            - pytest
+    - step:
+        name: Install dependences
+        caches:
+          - pip
+        script:
+          - pip install --upgrade pip
+          - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          - pip install flake8 pytest
+          - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+          - pytest
 
