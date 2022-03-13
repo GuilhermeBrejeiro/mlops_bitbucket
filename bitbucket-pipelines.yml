@@ -13,7 +13,7 @@ pipelines:
             - pip install --upgrade pip
             - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
             - pip install pytest
-            - pytest -v tests/* --junitxml=test-reports/report.xml
+            #- pytest -v 
       - step:
           name: Lint with flake8 and pytest
           script:
