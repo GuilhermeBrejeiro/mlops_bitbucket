@@ -19,7 +19,7 @@ with open('../config.json', 'r') as conf:
     config = json.load(conf)
 final_data_path = os.path.join(config['output_data_folder'], "final_data.csv")
 last_model_path = config['last_model']
-data = read_data(final_data_path)
+train = read_data(final_data_path)
 
 
 def train_final_data():
@@ -28,20 +28,11 @@ def train_final_data():
     Save model and encoder inside "last_model" folder   
     """
 
-    # Split data into train and test
-    train, test = train_test_split(data, test_size=0.2)
-
     #Create X_train, y_train and the encoder to be used on test sets
     X_train, y_train, encoder = process_data(train, label="quality", training=True, encoder=None)
 
-    #Creating X_test, y_test using the encoder created previously
-    X_test, y_test, _ = process_data(test, label="quality", training=False, encoder=encoder)
-
     #Training the model
     model = train_model(X_train, y_train)
-
-    #Making prediction on test set
-    y_pred = predictions(model, X_test)
 
     # Save model
     filename_model = "model_wine_quality.joblib"
