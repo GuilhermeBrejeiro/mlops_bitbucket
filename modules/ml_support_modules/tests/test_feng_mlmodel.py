@@ -14,14 +14,14 @@ from functions.feat_eng import read_data, process_data
 from functions.ml_model import train_model, acc_f1_metrics, predictions
 
 
-data_folder = os.path.abspath("./data/")
+data_folder = os.path.abspath("./data/test_data")
 
 @pytest.fixture
 def data_read():
     """
     Read data to use on the tests
     """
-    path = os.path.join(data_folder, "WineQT.csv")
+    path = os.path.join(data_folder, "test_data.csv")
     df = read_data(path)
     return df
 
