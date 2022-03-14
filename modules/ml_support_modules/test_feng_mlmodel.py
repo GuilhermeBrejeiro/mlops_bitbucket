@@ -21,6 +21,7 @@ def data_read():
     """
     Read data to use on the tests
     """
+    print(os.listdir(os.path.abspath("./")))
     path = os.path.join(data_folder, "test_data.csv")
     df = read_data(path)
     return df
