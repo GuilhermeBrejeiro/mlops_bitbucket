@@ -14,7 +14,7 @@ from functions.feat_eng import read_data, process_data
 from functions.ml_model import train_model, acc_f1_metrics, predictions
 
 
-data_folder = os.path.abspath("./")
+data_folder = os.path.abspath("./mlops/modules/ml_support_modules/WineQT.csv")
 
 @pytest.fixture
 def data_read():
