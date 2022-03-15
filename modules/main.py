@@ -8,8 +8,6 @@ from modules.ml_support_modules.functions.feat_eng import process_data
 
 app = FastAPI()
 
-
-
 # Open the config.json file get the paths variables
 with open('./config.json', 'r') as conf:
     config = json.load(conf)
@@ -19,8 +17,6 @@ model = joblib.load(model_path)
 # Load encoder
 encoder_path = os.path.join(config['production_model'], "encoder.joblib")
 encoder = joblib.load(encoder_path)
-
-
 
 
 @app.get("/")
@@ -41,14 +37,14 @@ class Input(BaseModel):
     sulphates: float = Field(..., example=0.58)
     alcohol: float = Field(..., example=9.4)
 
-@app.post("/")
+@app.post("/predict/")
 async def wine_quality_prediction(item:Input):
     """
     Receive arguments from Input class and predict the quality of the wine
     """
 
     input_dict = {
-    'fixed_acidity':[item.fixed_acidity],
+    'fixed_acidity': [item.fixed_acidity],
     'volatile_acidity': [item.volatile_acidity],
     'citric_acid': [item.citric_acid],
     'residual_sugar': [item.residual_sugar],
@@ -62,9 +58,14 @@ async def wine_quality_prediction(item:Input):
     }
 
     # Create a DataFrame using the values from the dict
-    df = pd.DataFrame([input_dict])
+    df = pd.DataFrame.from_dict(input_dict)
 
-    X, _, _ = process_data(df, training=False, encoder=encoder)
+    X, _, _ = process_data(
+                            df, 
+                            label=None,
+                            training=False, 
+                            encoder=encoder
+                            )
 
     y_pred = model.predict(X)
 
@@ -72,6 +73,4 @@ async def wine_quality_prediction(item:Input):
         answer = "Good quality wine!"
     else:
         answer = "Bad quality wine!"
-    return item.fixed_acidity #lembrar de voltar pra answer
-
-
+    return y_pred
