@@ -26,7 +26,7 @@ encoder = joblib.load(encoder_path)
 @app.get("/")
 def welcome():
 
-    return {"Hello": "MeLi project"}
+    return "MeLi project"
 
 class Input(BaseModel):
     fixed_acidity: float = Field(..., example=7.4)
