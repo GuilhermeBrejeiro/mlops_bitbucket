@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 import pandas as pd
-from ml_support_modules.functions.feat_eng import process_data
+from modules.ml_support_modules.functions.feat_eng import process_data
 
 app = FastAPI()
 
