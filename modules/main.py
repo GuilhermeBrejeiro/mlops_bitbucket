@@ -61,7 +61,7 @@ async def wine_quality_prediction(item:Input):
     # Create a DataFrame using the values from the dict
     df = pd.DataFrame.from_dict(input_dict)
     print(df)
-    
+
     X, _, _ = process_data(
                             df, 
                             label=None,
@@ -75,4 +75,4 @@ async def wine_quality_prediction(item:Input):
         answer = "Good quality wine!"
     else:
         answer = "Bad quality wine!"
-    return y_pred
+    return answer
