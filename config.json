@@ -1,7 +1,0 @@
-{
-    "input_data_folder": "data/all_data",
-    "output_data_folder": "data/final_data",
-    "last_model": "model/last_model",
-    "test_data": "data/test_data",
-    "production_model": "model/production_model"
-}

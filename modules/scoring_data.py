@@ -15,7 +15,7 @@ import os
 import json
 
 # Open the config.json file get the paths variables
-with open('../config.json', 'r') as conf:
+with open('./config.json', 'r') as conf:
     config = json.load(conf)
 # Load test data
 test_data_path = os.path.join(config['test_data'], "test_data.csv")

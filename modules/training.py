@@ -15,10 +15,12 @@ import os
 import json
 
 # Open the config.json file get the paths variables
-with open('../config.json', 'r') as conf:
+with open('./config.json', 'r') as conf:
     config = json.load(conf)
-final_data_path = os.path.join(config['output_data_folder'], "final_data.csv")
-last_model_path = config['last_model']
+
+#model_folder = os.path.abspath()
+final_data_path = os.path.join(os.path.abspath(config['output_data_folder']), "final_data.csv")
+last_model_path = os.path.abspath(config['last_model'])
 train = read_data(final_data_path)
 
 
