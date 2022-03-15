@@ -1,5 +1,9 @@
 pandas
 sklearn
 matplotlib
+pytest
+requests
 seaborn
 numpy
+uvicorn
+gunicorn
