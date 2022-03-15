@@ -57,6 +57,7 @@ async def wine_quality_prediction(item:Input):
     'alcohol': [item.alcohol]
     }
 
+    print(input_dict)
     # Create a DataFrame using the values from the dict
     df = pd.DataFrame.from_dict(input_dict)
 
