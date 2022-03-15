@@ -81,4 +81,3 @@ def test_train_pred_metrics(data_read):
     assert accuracy > 0
     assert f1 > 0
     
-
