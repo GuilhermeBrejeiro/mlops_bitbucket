@@ -4,7 +4,8 @@ import pandas as pd
 import os
 import json
 import joblib
-from modules.ml_support_modules.functions.feat_eng import process_data
+from ml_support_modules.functions.feat_eng import process_data
+
 
 app = FastAPI()
 
