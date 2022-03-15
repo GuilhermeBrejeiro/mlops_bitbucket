@@ -7,8 +7,9 @@ from modules.ml_support_modules.functions.feat_eng import process_data
 app = FastAPI()
 
 
+
 # Open the config.json file get the paths variables
-with open('../config.json', 'r') as conf:
+with open('./config.json', 'r') as conf:
     config = json.load(conf)
 # Load model
 model_path = os.path.join(config['production_model'], "model_wine_quality.joblib")
