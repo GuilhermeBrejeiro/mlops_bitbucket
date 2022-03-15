@@ -62,7 +62,7 @@ async def wine_quality_prediction(item:Input):
     }
 
     # Create a DataFrame using the values from the dict
-    df = pd.DataFrame.from_dict(input_dict)
+    df = pd.DataFrame([input_dict])
 
     X, _, _ = process_data(df, training=False, encoder=encoder)
 
@@ -72,6 +72,6 @@ async def wine_quality_prediction(item:Input):
         answer = "Good quality wine!"
     else:
         answer = "Bad quality wine!"
-    return answer
+    return item.fixed_acidity #lembrar de voltar pra answer
 
 
