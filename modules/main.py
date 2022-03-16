@@ -70,9 +70,9 @@ async def wine_quality_prediction(item:Input):
                             training=False, 
                             encoder=encoder
                             )
-
+    print(X)
     y_pred = model.predict(X)
-
+    print(y_pred)
     if y_pred[0] is True:
         answer = "Good quality wine!"
     else:
