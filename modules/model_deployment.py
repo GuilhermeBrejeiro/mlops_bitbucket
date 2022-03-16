@@ -9,8 +9,8 @@ Date: March 14, 2022
 """
 import shutil, os
 import json
-
-with open('./config.json', 'r') as conf:
+os.listdir("./")
+with open('./modules/config.json', 'r') as conf:
     config = json.load(conf)
 # List all files on last_model folder
 files = os.listdir(config['last_model']) 
