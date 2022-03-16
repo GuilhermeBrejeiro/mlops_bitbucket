@@ -14,10 +14,10 @@ print(os.listdir("./"))
 with open('./modules/config.json', 'r') as conf:
     config = json.load(conf)
 # Load model
-model_path = os.path.join(config['production_model'], "model_wine_quality.joblib")
+model_path = os.path.join(config['production_model_main'], "model_wine_quality.joblib")
 model = joblib.load(model_path)
 # Load encoder
-encoder_path = os.path.join(config['production_model'], "encoder.joblib")
+encoder_path = os.path.join(config['production_model_main'], "encoder.joblib")
 encoder = joblib.load(encoder_path)
 
 

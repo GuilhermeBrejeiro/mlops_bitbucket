@@ -3,5 +3,7 @@
     "output_data_folder": "../data/final_data",
     "last_model": "../model/last_model",
     "test_data": "../data/test_data",
-    "production_model": "../model/production_model"
+    "production_model": "../model/production_model",
+    "production_model_main": "./model/production_model"
+
 }
