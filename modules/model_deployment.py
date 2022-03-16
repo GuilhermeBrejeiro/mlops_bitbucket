@@ -8,23 +8,20 @@ Author: Guilherme Brejeiro
 Date: March 14, 2022
 """
 import shutil, os
-import json
-os.listdir("./")
-with open('./modules/config.json', 'r') as conf:
-    config = json.load(conf)
-# List all files on last_model folder
-files = os.listdir(config['last_model']) 
-prod_env = config['production_model']
-def deploy_to_production():
+
+
+def deploy_to_production(last_model, production_model):
     """
     Copy encoder.joblib, last_score.txt and model_wine_quality.joblib
     from "last_model" to the production environment
     """
+    files = os.listdir(last_model)
+
     for file in files:
-        full_filename = os.path.join(config['last_model'], file)
-        shutil.copy(full_filename, prod_env)
+        full_filename = os.path.join(last_model, file)
+        shutil.copy(full_filename, production_model)
 
 
 if __name__ == "__main__":
-    deploy_to_production()
+    deploy_to_production(last_model, production_model)
 

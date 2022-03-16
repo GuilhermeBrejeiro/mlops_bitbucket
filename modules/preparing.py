@@ -9,7 +9,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Open the config.json file get the paths variables
-with open('../config.json', 'r') as conf:
+with open('./config.json', 'r') as conf:
     config = json.load(conf)
 
 input_folder = config["input_data_folder"]
@@ -17,7 +17,7 @@ output_folder = config["output_data_folder"]
 
 
 
-def merge_and_deduplicate():
+def merge_and_deduplicate(input_folder, output_folder):
     """
     This function will take all data available on "all_data" folder,
     merge it and drop duplicates. After that it will create a log
@@ -35,8 +35,10 @@ def merge_and_deduplicate():
 
     # Log the names of all dataframes used on the final_data.csv
     with open(output_folder + "/data_logs.txt", "w") as logs:
-        logs.write(str(filenames))
+        for i in filenames:
+            logs.write(str(i))
+            logs.write("\n")
 
 
 if __name__ == "__main__":
-    merge_and_deduplicate()
+    merge_and_deduplicate(input_folder, output_folder)
