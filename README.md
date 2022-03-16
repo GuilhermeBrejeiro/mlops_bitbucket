@@ -5,7 +5,7 @@
 ## Summary
 
 For this challenge I used a Platform as a Service (PaaS) known as Heroku, simulating an environment that receives data into buckets and trains the model with it, if it's performance is better to the performance of the previously trained model, this becomes the model in production, otherwise the previous model remains as the productive model.
-
+P.S. To focus on design and implementation, the dataset and the ML training chosen was as simple as possible
 ## Goals
 1. Choose a simple database, split it into small slots to simulate the real enviroment that receives new data and retrains the model
 2. Develop functions to:
