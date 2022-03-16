@@ -8,7 +8,7 @@ from modules.ml_support_modules.functions.feat_eng import process_data
 
 
 app = FastAPI()
-os.listdir("./")
+print(os.listdir("./"))
 
 # Open the config.json file get the paths variables
 with open('./modules/config.json', 'r') as conf:
