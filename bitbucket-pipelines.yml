@@ -12,6 +12,10 @@ pipelines:
           - pip install --upgrade pip
           - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           - pip install flake8 pytest
+        name: Check functions and make test
+        script:
           - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
           - pytest
-
+        name: Push to heroku
+        script:
+          - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD

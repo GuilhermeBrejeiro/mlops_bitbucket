@@ -20,14 +20,12 @@ api_parameters = {
 
 def request_to_api(api_parameters=api_parameters):
   """
-  
+  Function to POST and request a prediction from the API
   """
 
+  response = requests.post("https://guilhermebrejeiromeli.herokuapp.com/predict", data=json.dumps(api_parameters))
 
-
-  response = requests.post("https://guilhermebrejeiromeli.herokuapp.com/", data=json.dumps(api_parameters))
-
-  return json.dumps(api_parameters)
+  return response.elapsed.total_seconds()
 
 if __name__ == "__main__":
   answer = request_to_api()
