@@ -19,3 +19,20 @@ P.S. To focus on design and implementation, the dataset and the ML training chos
 
 ![Pipeline](images/full_cicle.png)
 
+## Folders
+
+* data 
+    - all_data: gathers all databases that are inputed in the process
+    - final_data: all data joined in one big dataset, excluding any duplicate
+    - test_data: a small dataset split from the original data, used for test model's predictions
+* model
+    - last_model: the last model trained, last encoder trained and it's scores on test data
+    - production_model: the best model trained, it's encoder and it's scores on test data
+* modules
+    - ml_support_modules: auxiliar functions used for read, clean and select models
+    - preparing.py: take all data available in "all_data", merge it, drop duplicates and save it on "final_data"
+    - training.py: train the model using "final_data" content and save model, encoder and logs on "last_model"
+    - scoring_data.py: take the model from "last_model" and score it's predictions
+    - model_deployment.py: compare the model from 'last_model" with the model from "production_model" the best one become the production model
+    - full_cicle.py: run the complete pipeline with all the previously functions
+
