@@ -48,22 +48,24 @@ P.S. To focus on design and implementation, the dataset and the ML training chos
 ### AWS
 For this project I didn't use any of the most common clouds to avoid costs and to focus on tools like Heroku, FastAPI and Bitbucket but all of it can be integrated with cloud providers.
 An example would be the mlops pipeline on AWS:
-* Some code repository like GitLab, Github or even Bitbucket could be use to create the pipelines of CI/CD
-* SageMaker Pipelines to create data preparation, model training and model evaluation
-* Amazon S3 to store data on it's buckets
-* AWS Lambda to triggers functions for the model deployment after a new model get register and has a better score
-* SageMaker Model Registry to track model versions and artifacts
-* AWS CloudFormation to deploy and create the SageMaker endpoints when the trigger approuves the model score
-* SageMaker hosting to creates HTTPS real-time endpoints
+- Some code repository like GitLab, Github or even Bitbucket could be use to create the pipelines of CI/CD
+- SageMaker Pipelines to create data preparation, model training and model evaluation
+- Amazon S3 to store data on it's buckets
+- AWS Lambda to triggers functions for the model deployment after a new model get register and has a better score
+- SageMaker Model Registry to track model versions and artifacts
+- AWS CloudFormation to deploy and create the SageMaker endpoints when the trigger approuves the model score
+- SageMaker hosting to creates HTTPS real-time endpoints
 
 ### GCP
 An example for GCP mlops pipelines would be:
-* GCP AI Platform to create the pipelines, jobs dependencies and run it 
-* GCP AI Platform to train the model 
-* GCP AI Platform for making predictions with a unified end point and model version control
-* GCP Cloud Storage to store data on it's buckets
-* GCP Cloud Functions to set the logical triggers based on events, listening data changes in Cloud Storage and trigger the running pipeline with it
-* GCP Cloud Build for unit test and deploy services integrated with code
+
+
+- GCP AI Platform to create the pipelines, jobs dependencies and run it 
+- GCP AI Platform to train the model 
+- GCP AI Platform for making predictions with a unified end point and model version control
+- GCP Cloud Storage to store data on it's buckets
+- GCP Cloud Functions to set the logical triggers based on events, listening data changes in Cloud Storage and trigger the running pipeline with it
+- GCP Cloud Build for unit test and deploy services integrated with code
 
 ## API service handle 1000+ RPM
 To make load tests on the API, it was used a python package called locust (load_test.py)
@@ -71,8 +73,14 @@ After run this function it creates an online link to select how many requests pe
 
 
 Here I specify 10 users sending 1000 requests
+
+
 ![Locust](images/simulate.png)
+
+
 The locust just return requests for seconds but converting itś possible to see that the API could receive 1000+ requests per minute (16.7 requests per second)
+
+
 ![RPS](images/24rps.png)
 
 ### Some points on solution proposed
