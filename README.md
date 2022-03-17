@@ -17,5 +17,5 @@ P.S. To focus on design and implementation, the dataset and the ML training chos
 4. Load testing the API using locust (load_test.py)
 5. Create a bitbucket pipeline to automate the process of install dependences, test modules and push to heroku at every commit
 
-(mlops/images/full_cicle.png)
+[Pipeline](images/full_cicle.png)
 
