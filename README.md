@@ -21,7 +21,8 @@ This information will be necessary for the bitbucket-pipelines.yml deploy automa
 
 
 ## My project
-Bitbucket: bitbucket.org/gbrejeiro/mlops
+Bitbucket: bitbucket.org/gbrejeiro/mlops  
+
 Heroku: https://guilhermebrejeiromeli.herokuapp.com/docs
 
 ## Summary
