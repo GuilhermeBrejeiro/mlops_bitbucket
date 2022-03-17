@@ -2,6 +2,27 @@
 
 # Machine Learning Engineer Evaluation Exam
 
+## Run a clone
+
+Create a heroku account
+Create a bitbucket account and clone the repository:
+
+git clone git@bitbucket.org:gbrejeiro/mlops.git
+
+Inside bitbucket go to deployments and "Add variables"
+
+Add two variables: HEROKU_API_KEY and HEROKU_APP_NAME
+
+HEROKU_API_KEY you can find on https://dashboard.heroku.com/account "Regenerate API Key"
+HEROKU_APP_NAME is the name of herokuapp, in my case it was guilhermebrejeiromeli
+
+This information will be necessary for the bitbucket-pipelines.yml deploy automaticaly to heroku
+
+
+## My project
+Bitbucket: bitbucket.org/gbrejeiro/mlops
+Heroku: https://guilhermebrejeiromeli.herokuapp.com/docs
+
 ## Summary
 
 For this challenge I used a Platform as a Service (PaaS) known as Heroku, simulating an environment that receives data into buckets and trains the model with it, if it's performance is better to the performance of the previously trained model, this becomes the model in production, otherwise the previous model remains as the productive model.
