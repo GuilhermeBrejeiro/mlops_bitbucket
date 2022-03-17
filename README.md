@@ -35,4 +35,11 @@ P.S. To focus on design and implementation, the dataset and the ML training chos
     - scoring_data.py: take the model from "last_model" and score it's predictions
     - model_deployment.py: compare the model from 'last_model" with the model from "production_model" the best one become the production model
     - full_cicle.py: run the complete pipeline with all the previously functions
-
+    - main.py: FastAPI definitions and model specifications necessary to run the API
+    - config.json: paths to directories
+    - load_test.py: run locust with POST request to the API and test the load (rps)
+* mlops
+    - bitbucket-pipelines.yml: CI/CD installing the requirements, run the tests and automaticaly push the updates to Heroku
+    - Procfile: declares the commands to run the API
+    - requirements: all the dependences necessary to run the app
+    - wine_notebooks.ipynb: a simple EDA to understand the data before starting my project
