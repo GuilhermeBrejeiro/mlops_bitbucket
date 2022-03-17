@@ -58,7 +58,7 @@ An example would be the mlops pipeline on AWS:
 
 ### GCP
 An example for GCP mlops pipelines would be:
-* GCP AI Platform to create the pipelines, jobs dependencies and run it
+* GCP AI Platform to create the pipelines, jobs dependencies and run it 
 * GCP AI Platform to train the model 
 * GCP AI Platform for making predictions with a unified end point and model version control
 * GCP Cloud Storage to store data on it's buckets
