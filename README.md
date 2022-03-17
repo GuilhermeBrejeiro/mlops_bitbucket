@@ -65,4 +65,21 @@ An example for GCP mlops pipelines would be:
 * GCP Cloud Functions to set the logical triggers based on events, listening data changes in Cloud Storage and trigger the running pipeline with it
 * GCP Cloud Build for unit test and deploy services integrated with code
 
+## API service handle 1000+ RPM
+To make load tests on the API, it was used a python package called locust (load_test.py)
+After run this function it creates an online link to select how many requests per minute I want to send to my API
 
+
+Here I specify 10 users sending 1000 requests
+![Locust](images/simulate.png)
+The locust just return requests for seconds but converting itś possible to see that the API could receive 1000+ requests per minute (16.7 requests per second)
+![RPS](images/24rps.png)
+
+### Some points on solution proposed
+* For autenthication it was used SSH and API key from heroku and bitbucket, on the cloud you can use services as IAM (for AWS) or Cloud IAM (for GCP).
+* For error handling it's possible to use test functions using expected values output and 200 code from API post, I use some simple test functions with pytest.
+* From API service error you can change DYNO file from heroku or user k8s services on cloud to load balance the application.
+* To log data it's possible to use tools like DVC (Data Version Control) with bucket services to keep tracking all ML models and data sets, I create some simple functions to log the names on a .txt file.
+* At least for now I can write code on Python and PySpark, with some small knowledge about Scala
+
+With more time and resources I would use Cloud, k8s, MLFlow, DVC, prometheus and kibana. Depending on the kind of ML model Tensorflow and TFX would be great.
