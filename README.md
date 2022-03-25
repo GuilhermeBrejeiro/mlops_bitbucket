@@ -1,6 +1,5 @@
-<p align="center"><img height="40" width="40" src="https://upload.wikimedia.org/wikipedia/en/thumb/2/20/MercadoLibre.svg/1200px-MercadoLibre.svg.png"></p>
 
-# Machine Learning Engineer Evaluation Exam
+# Machine Learning Engineer using bitbucket and heroku
 
 ## Run a clone
 
